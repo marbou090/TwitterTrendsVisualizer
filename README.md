@@ -1,5 +1,6 @@
 # TwitterTrendsVisualizer
 
+[sample](https://radiant-earth-80654.herokuapp.com/)
 
 ## Specification
 This script save　tweet from twitter timelines. When the date changes, save the data to JSON. 

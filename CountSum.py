@@ -35,6 +35,6 @@ result = result.sort_values("count", ascending=False)
 print(result)
 
 #base = base.to_dict()
-json_data = result.to_dict()
-with open("sum_6to12.json",'w',encoding='utf-8') as f:
-    json.dump(json_data,f,ensure_ascii=False,indent=4)
+result.to_json("sum_6to12.json",force_ascii=False,orient="records")
+#with open("sum_6to12.json",'w',encoding='utf-8') as f:
+#    json.dump(json_data,f,ensure_ascii=False,indent=4)
