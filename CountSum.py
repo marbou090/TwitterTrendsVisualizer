@@ -9,29 +9,32 @@ import json
 import pandas as pd
 from tqdm import tqdm
 
-base = pd.DataFrame(columns=['word','count'])
-result = pd.DataFrame(columns=['word','count'])
+base = pd.DataFrame(columns=["word","count"])
+result = pd.DataFrame(columns=["word","count"])
 
 #print(base)
+json_open = open("sum_6to7_10to12.json", 'r')
+base = pd.read_json(json_open)
 
 
-for i in ['12','10-2','10','11-1','11-2']:#,'10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31']:
-    json_open = open('sum_' +i+'.json', 'r')
-    df_s = pd.read_json(json_open)
-    base = pd.concat([df_s,base], join='outer')
+for i in ["01","02","03","04","05","06"]:
+    json_open = open("新しいフォルダー/202007" +i+".json", 'r')
+    jj = json.load(json_open)
+    print("新しいフォルダー/202007" +i+".json")
+    print(type(jj))
+    df_s = pd.DataFrame(jj)
+    base = pd.concat([df_s,base], join='outer',sort=False)
 
-print(base[base['word']=='コミュ'])
 
-for index,row in tqdm(base.iterrows(),total = len(result)):
-    count = base[base['word'] == row['word']]['count'].sum()
-    result = result.append({'word':row['word'],'count':count},ignore_index=True)
+for index,row in tqdm(base.iterrows(),total = len(base)):
+    count = base[base["word"] == row["word"]]["count"].sum()
+    result = result.append({"word":row["word"],"count":count},ignore_index=True)
 
-result = result.drop_duplicates(subset='word')
-result = result.sort_values('count', ascending=False)
+result = result.drop_duplicates(subset="word")
+result = result.sort_values("count", ascending=False)
 print(result)
 
 #base = base.to_dict()
 json_data = result.to_dict()
-with open('sum_10to12.json','w',encoding='utf-8') as f:
+with open("sum_6to12.json",'w',encoding='utf-8') as f:
     json.dump(json_data,f,ensure_ascii=False,indent=4)
-

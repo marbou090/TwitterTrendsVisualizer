@@ -38,8 +38,8 @@ def format_text(text):
 t = MeCab.Tagger()
 #t.parse('')
 
-result = pd.DataFrame(columns=['word','count'])
-df_word = pd.DataFrame(columns=['word'])
+result = pd.DataFrame(columns=["word","count"])
+df_word = pd.DataFrame(columns=["word"])
 
 for i in (['19','20','21','22','23','24','25','26','27','28','29','30']):
     json_open = open('TwitterData11-2/2020-11-' +i+'.json', 'r')
