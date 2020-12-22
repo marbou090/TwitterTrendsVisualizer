@@ -3,4 +3,12 @@ config.py
 JsonLoad.py
 TweetExtract.py
 TwitterData/
+TwitterData9/
+TwitterData10-1/
+TwitterData10-2/
+TwitterData11-1/
+TwitterData11-2/
+新しいフォルダー/
 .git/
+.DS_Store
+sum_12.json

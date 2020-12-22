@@ -2,11 +2,7 @@
 
 
 ## Specification
-This script save　tweet from twitter timelines. When the date changes, save the data to CSV. 
-Example of data to be saved
-|  TweetID  |  text  |  Word  |  Week  |  Month  |  Day  |  Hour  |  Minute  |  Second  |  Year  |
-|  -------  |  ---------  |  --------  |  ------------  |  -------------  |  ---------  |  ---------  |  -------  |  ----------  |  ---------  |
-|  1249121888112128000  |  今日も一日 https://t.co/8JLXdARugO  |  今日  |  Sat  |  04  |  11  |   23  |   47  |   20  |  2020   |
+This script save　tweet from twitter timelines. When the date changes, save the data to JSON. 
 
 ## API application and key acquisition
 Apply for Twitter API and get consumer key in this site.
