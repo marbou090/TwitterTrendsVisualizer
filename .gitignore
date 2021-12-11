@@ -3,3 +3,4 @@ config.py
 JsonLoad.py
 TweetExtract.py
 TwitterData/
+.DS_Store
